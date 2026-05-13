@@ -16,6 +16,10 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        arcade:
+          "bg-[var(--neon-green)] text-black font-bold uppercase tracking-wider shadow-[0_0_18px_color-mix(in_oklab,var(--neon-green)_55%,transparent)] hover:bg-[color-mix(in_oklab,var(--neon-green)_85%,white)] hover:shadow-[0_0_28px_color-mix(in_oklab,var(--neon-green)_70%,transparent)]",
+        warn:
+          "bg-[var(--warn)] text-black font-semibold hover:bg-[color-mix(in_oklab,var(--warn)_85%,white)] shadow-[0_0_14px_color-mix(in_oklab,var(--warn)_50%,transparent)]",
       },
       size: {
         default: "h-9 px-4 py-2",
