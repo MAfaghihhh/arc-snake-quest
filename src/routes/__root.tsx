@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { Web3Provider } from "@/components/Web3Provider";
 
 function NotFoundComponent() {
   return (
@@ -72,19 +73,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Snake on Arc — Web3 Mini Game on Arc Testnet" },
+      {
+        name: "description",
+        content:
+          "Play classic Snake on Arc Testnet. Pay 0.1 USDC to play, submit scores on-chain, and climb the global leaderboard.",
+      },
+      { property: "og:title", content: "Snake on Arc" },
+      {
+        property: "og:description",
+        content: "Retro snake powered by Circle USDC on Arc Testnet.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "anonymous",
+      },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap",
       },
     ],
   }),
@@ -113,7 +126,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <Web3Provider>
+        <Outlet />
+      </Web3Provider>
     </QueryClientProvider>
   );
 }
