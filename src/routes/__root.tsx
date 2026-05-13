@@ -79,13 +79,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Play classic Snake on Arc Testnet. Pay 0.1 USDC to play, submit scores on-chain, and climb the global leaderboard.",
       },
-      { property: "og:title", content: "Snake on Arc" },
+      { property: "og:title", content: "Snake on Arc — Web3 Mini Game on Arc Testnet" },
       {
         property: "og:description",
         content: "Retro snake powered by Circle USDC on Arc Testnet.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Snake on Arc — Web3 Mini Game on Arc Testnet" },
+      { name: "description", content: "Play a classic Snake game on Arc Testnet, paying entry fees and submitting scores with USDC." },
+      { property: "og:description", content: "Play a classic Snake game on Arc Testnet, paying entry fees and submitting scores with USDC." },
+      { name: "twitter:description", content: "Play a classic Snake game on Arc Testnet, paying entry fees and submitting scores with USDC." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
